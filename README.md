@@ -1,103 +1,55 @@
-# OpenClaw Total Wipeout
+# OpenClaw Total Wipeout: The Exorcism Kit for Your Haunted PC
 
-This is the “I want it gone” kit.
+Ah, OpenClaw. That sneaky little AI that promised to be your best friend but turned into a clingy ex who won't leave your system. Installed it on a whim? Now it's squatting in your WSL, lurking in your Windows folders, and probably judging your browser history. If you're here, you're already feeling like a fool for letting it in—don't worry, we've all been there. This repo is your digital garlic and holy water: it banishes OpenClaw completely, no Ouija board required.
 
-If OpenClaw is stuck, broken, haunting your machine, or you don’t even remember installing it, this repo removes it completely — Windows, WSL, configs, caches, everything.
+No tech wizardry needed. Just follow along, and we'll laugh about this later.
 
-No technical knowledge required.
+---
 
-------------------------------------------------------------
-WHO THIS IS FOR
-------------------------------------------------------------
+## Who This Is For (No Judgment Zone)
 
-• You installed OpenClaw and now regret it.
-• You tried uninstalling it and it still shows up.
-• You don’t know what you did and just want your computer back.
+- You thought OpenClaw was "cool" and now it's more like "cool, how do I make it stop?"
+- You uninstalled it three times, but it's still waving from your task manager like "Miss me?"
+- You're staring at your screen thinking, "What fresh hell is this?" and just want your innocent computer back.
 
-------------------------------------------------------------
-WHAT THIS DOES (IN PLAIN ENGLISH)
-------------------------------------------------------------
+We're not here to say "I told you so." We're here to say "Let's nuke it from orbit."
 
-OpenClaw hides in multiple places:
+---
 
-• Inside WSL/Linux
-• Inside Windows
-• In leftover folders normal uninstallers ignore
+## What This Does (In Plain, Sarcastic English)
 
-These scripts:
+OpenClaw doesn't just install—it *infests*. Hiding in WSL like a hermit crab, burrowing into Windows like a tick, and leaving digital droppings everywhere uninstallers fear to tread.
 
-• Stop anything OpenClaw might still be running
-• Remove it from Windows
-• Remove it from WSL
-• Delete leftover junk
-• Verify it’s actually gone
+These scripts? They're the pest control pros:
+- Halt any sneaky background shenanigans OpenClaw's pulling.
+- Evict it from Windows (politely, with extreme prejudice).
+- Banish it from WSL (no forwarding address).
+- Sweep up the crumbs: configs, caches, that one folder you didn't know existed.
+- Double-check it's gone, because paranoia is your friend now.
 
-------------------------------------------------------------
-STEP 1 — DOWNLOAD THIS REPO
-------------------------------------------------------------
+It's like therapy for your PC—minus the hourly rate.
 
-1. Click the green “Code” button.
-2. Click “Download ZIP”.
-3. Unzip it somewhere easy, like your Desktop.
+---
 
-------------------------------------------------------------
-STEP 2 — WIPE OPENCLAW FROM WSL (LINUX)
-------------------------------------------------------------
+## Step 1 — Download This Repo (The Easy Part)
 
-Skip this if you never used “Ubuntu” or “WSL”.
+1. Smash that green **Code** button like it's OpenClaw's face.
+2. Hit **Download ZIP**—because who has time for cloning?
+3. Unzip it on your Desktop. (Pro tip: Not in a folder called "Regrets.")
 
-Open Ubuntu, then run:
+---
 
-cd /mnt/c/Users/YOUR-NAME/Desktop/openclaw-total-wipeout/scripts
+## Step 2 — Wipe OpenClaw from WSL (The Linux Lair)
+
+Skip if you've never uttered "WSL" or "Ubuntu" in polite company. (If you have, congrats—you're deeper in the nerd hole than most.)
+
+### 2.1 Open Ubuntu (WSL)
+
+Start menu → type **Ubuntu** → Enter. If it asks for a password, it's probably judging you too.
+
+### 2.2 Run the Wipe Script (Say Goodbye to the Gremlin)
+
+```bash
+cd /mnt/c/Users/<YOUR-NAME>/Desktop/openclaw-total-wipeout/scripts
 chmod +x wipe-openclaw-wsl.sh
 ./wipe-openclaw-wsl.sh
-
-------------------------------------------------------------
-STEP 3 — WIPE OPENCLAW FROM WINDOWS
-------------------------------------------------------------
-
-Open PowerShell as Administrator, then run:
-
-cd "$env:USERPROFILE\Desktop\openclaw-total-wipeout\scripts"
-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-./wipe-openclaw-windows.ps1
-
-------------------------------------------------------------
-STEP 4 — VERIFY IT’S GONE
-------------------------------------------------------------
-
-WSL:
-
-cd /mnt/c/Users/YOUR-NAME/Desktop/openclaw-total-wipeout/scripts
-chmod +x verify-openclaw-gone-wsl.sh
-./verify-openclaw-gone-wsl.sh
-
-Windows:
-
-cd "$env:USERPROFILE\Desktop\openclaw-total-wipeout\scripts"
-./verify-openclaw-gone-windows.ps1
-
-------------------------------------------------------------
-FAQ
-------------------------------------------------------------
-
-Q: Can this break other stuff?
-A: No — it only targets OpenClaw and its folders.
-
-Q: Can I reinstall OpenClaw later?
-A: Yes. This just wipes it clean.
-
-Q: Why didn’t uninstalling it normally work?
-A: Because OpenClaw leaves behind services, folders, and PATH entries.
-
-Q: Something still looks weird.
-A: Open an issue and paste what you see. We’ll extend the scripts.
-
-------------------------------------------------------------
-NEED HELP?
-------------------------------------------------------------
-
-Open an issue with:
-• What you ran
-• What you saw
-• Screenshot if possible
