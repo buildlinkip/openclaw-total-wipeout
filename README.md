@@ -93,6 +93,67 @@ Minus the hourly rate.
 
 ---
 
+# OpenClaw Total Wipeout
+
+Cleanly remove OpenClaw from a Windows machine without touching unrelated files or nuking your own repo.
+
+This repo provides:
+
+- A **safe Windows wipe script** that only targets known OpenClaw debris
+- A **launcher script** that works even with GitHub’s double-folder ZIP layout
+- Clear, ASCII-only output suitable for any default Windows PowerShell environment
+
+---
+
+## ⚠️ Important safety notes
+
+**This tool is designed to be destructive only toward OpenClaw artifacts.**
+
+- It does **not** delete arbitrary folders based on name patterns
+- It does **not** recurse your entire user profile
+- It does **not** delete this repo folder
+- It only removes **known OpenClaw locations** and shims
+
+However:
+
+- Always review the scripts before running them
+- Always run from a **local, non-cloud-synced folder**
+
+---
+
+## ⚠️ Do not run from OneDrive / Dropbox / iCloud
+
+Windows and cloud sync tools can block or interfere with PowerShell scripts in synced folders.
+
+**Do not run this repo from:**
+
+- OneDrive
+- Dropbox
+- iCloud
+- Google Drive
+- Any other cloud-synced location
+
+Instead:
+
+1. Download the ZIP from GitHub
+2. Extract it to a local folder, for example:
+
+   ```
+   C:\Users\<you>\Desktop\openclaw-total-wipeout
+   ```
+3. Run all commands from that local folder
+
+If you see errors about scripts not being digitally signed or execution policy being restricted, you are very likely in a cloud-synced or protected folder.
+
+## Requirements
+Windows 10 or later
+
+PowerShell (Windows PowerShell 5.x or PowerShell 7+)
+
+Optional: npm installed, if OpenClaw was installed globally via npm
+
+---
+
 ## Step 1 — Download This Repo
 
 1. Click the green **Code** button
@@ -125,7 +186,7 @@ Let it run. Don’t interrupt the exorcism.
 
 ## Step 3 — Windows Cleanup
 
-Open **PowerShell as Administrator**
+Open **PowerShell as Administrator (Press Start, type powershell, right click windows power shell, select ##Run as administrator**
 
 # IMPORTANT: You MUST run the script from inside the folder where you unzipped the repo.
 
@@ -137,17 +198,40 @@ Example:
 cd "C:\Users\<YourUser>\Downloads\openclaw-total-wipeout-main"
 ```
 
-Then: 
+Then Allow local scripts to run (once per user): 
 
-```Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+In Powershell, paste this:
+```
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+```
+
+Run The Launcher (where run-windows-wipe.ps1 lives)
+
+```
 .\run-windows-wipe.ps1
 ```
+
 This is the ONLY way PowerShell will run the script.
 
 The script will automatically locate the repo anywhere on your C: drive and run the wipe.
 
 Approve prompts. Trust the process.
 
+## You should see output similar to:
+
+```
+[INFO] Locating repo root...
+[INFO] Repo root resolved to:
+  C:\Users\<you>\Desktop\openclaw-total-wipeout
+[INFO] Using wipe script:
+  C:\Users\<you>\Desktop\openclaw-total-wipeout\scripts\wipe-openclaw-windows.ps1
+
+=== OpenClaw Windows Wipe ===
+
+Wipe OpenClaw from Windows? (y/N):
+```
+
+Type Y and press enter
 ---
 
 ## Step 4 — Reboot
