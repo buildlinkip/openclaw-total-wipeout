@@ -127,11 +127,19 @@ Let it run. Don’t interrupt the exorcism.
 
 Open **PowerShell as Administrator**
 
-Navigate to the scripts folder:
+# IMPORTANT: Before running the script, navigate into the folder where you unzipped the repo.
 
-```powershell
+```
+cd "<path-to-openclaw-total-wipeout-main>"
+```
+
+Then: 
+
+```Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 .\run-windows-wipe.ps1
 ```
+This is the ONLY way PowerShell will run the script.
+
 The script will automatically locate the repo anywhere on your C: drive and run the wipe.
 
 Approve prompts. Trust the process.
