@@ -130,7 +130,7 @@ Open **PowerShell as Administrator**
 Navigate to the scripts folder:
 
 ```powershell
-cd "$(Get-ChildItem -Path C:\ -Recurse -Directory -Filter 'openclaw-total-wipeout*' -ErrorAction SilentlyContinue | Select-Object -First 1).FullName\scripts"
+cd <path-to-repo>/scripts
 ./wipe-openclaw-windows.ps1
 ```
 
