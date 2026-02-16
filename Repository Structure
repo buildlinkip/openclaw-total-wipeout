@@ -1,0 +1,10 @@
+openclaw-total-wipeout/
+├─ README.md
+├─ LICENSE
+├─ scripts/
+│  ├─ wipe-openclaw-wsl.sh
+│  ├─ wipe-openclaw-windows.ps1
+│  ├─ verify-openclaw-gone-wsl.sh
+│  └─ verify-openclaw-gone-windows.ps1
+└─ docs/
+   └─ what-just-happened.md
