@@ -1,9 +1,11 @@
-        ☠ OPENCLAW TOTAL WIPEOUT ☠
-     The Exorcism Kit for Your Haunted PC
+<h1 align="center">☠ OPENCLAW TOTAL WIPEOUT ☠</h1>
+<h2 align="center">The Exorcism Kit for Your Haunted PC</h2>
 
-     <p align="center">
+
+   <p align="center">
   <img src="https://github.com/user-attachments/assets/a3bc5b10-3f2d-4687-ba37-f1ad97251524" alt="Image">
 </p>
+
 
 ════════════════════════════════════════════════════
 
@@ -22,10 +24,9 @@ STATUS: YOUR PC IS YOURS AGAIN
 
 ════════════════════════════════════════════════════
 
-# OPENCLAW TOTAL WIPEOUT
-## The Exorcism Kit for Your Haunted PC
+<div align="center">
 
-```
+<pre>
 ==========================================
    OPENCLAW : TOTAL WIPEOUT
    SYSTEM EXORCISM IN PROGRESS
@@ -37,7 +38,10 @@ STATUS: YOUR PC IS YOURS AGAIN
 [✔] spirit banished
 
 STATUS: MACHINE CLEANSED
-```
+</pre>
+
+</div>
+
 
 Ah, OpenClaw. That sneaky little AI that promised to be your best friend but turned into a clingy ex who won't leave your system. Installed it on a whim? Now it's squatting in your WSL, lurking in your Windows folders, and probably judging your browser history.
 
