@@ -130,9 +130,9 @@ Open **PowerShell as Administrator**
 Navigate to the scripts folder:
 
 ```powershell
-cd <path-to-repo>/scripts
-./wipe-openclaw-windows.ps1
+.\run-windows-wipe.ps1
 ```
+The script will automatically locate the repo anywhere on your C: drive and run the wipe.
 
 Approve prompts. Trust the process.
 
