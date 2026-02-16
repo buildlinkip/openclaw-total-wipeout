@@ -3,12 +3,12 @@ $repo = Get-ChildItem -Path C:\ -Recurse -Directory -Filter 'openclaw-total-wipe
         Select-Object -First 1
 
 if (-not $repo) {
-    Write-Host "❌ Could not find the OpenClaw wipeout repo on C:. Make sure it's unzipped."
+    Write-Host "[ERROR] Could not find the OpenClaw wipeout repo on C:. Make sure it's unzipped."
     exit
 }
 
 $script = Join-Path $repo.FullName "scripts\wipe-openclaw-windows.ps1"
 
-Write-Host "🔍 Found repo at: $($repo.FullName)"
-Write-Host "🚀 Running wipe script..."
+Write-Host "[INFO] Found repo at: $($repo.FullName)"
+Write-Host "[INFO] Running wipe script..."
 powershell -ExecutionPolicy Bypass -File $script
