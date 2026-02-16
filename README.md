@@ -127,10 +127,14 @@ Let it run. Don’t interrupt the exorcism.
 
 Open **PowerShell as Administrator**
 
-# IMPORTANT: Before running the script, navigate into the folder where you unzipped the repo.
+# IMPORTANT: You MUST run the script from inside the folder where you unzipped the repo.
 
+PowerShell starts in C:\Windows\system32 when run as Administrator.
+You must navigate into the repo folder first.
+
+Example:
 ```
-cd "<path-to-openclaw-total-wipeout-main>"
+cd "C:\Users\<YourUser>\Downloads\openclaw-total-wipeout-main"
 ```
 
 Then: 
