@@ -130,8 +130,8 @@ Open **PowerShell as Administrator**
 Navigate to the scripts folder:
 
 ```powershell
-cd "$env:USERPROFILE\Desktop\openclaw-total-wipeout\scripts"
-.\windows_wipe.ps1
+cd "$(Get-ChildItem -Path C:\ -Recurse -Directory -Filter 'openclaw-total-wipeout*' -ErrorAction SilentlyContinue | Select-Object -First 1).FullName\scripts"
+./wipe-openclaw-windows.ps1
 ```
 
 Approve prompts. Trust the process.
