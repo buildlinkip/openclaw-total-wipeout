@@ -7,6 +7,9 @@
 </p>
 
 
+<div align="center">
+
+<pre>
 ════════════════════════════════════════════════════
 
 >> entity detected: OPENCLAW
@@ -23,13 +26,14 @@
 STATUS: YOUR PC IS YOURS AGAIN
 
 ════════════════════════════════════════════════════
+</pre>
 
-<div align="center">
+<br>
 
 <pre>
 ==========================================
-   OPENCLAW : TOTAL WIPEOUT
-   SYSTEM EXORCISM IN PROGRESS
+        OPENCLAW : TOTAL WIPEOUT
+     SYSTEM EXORCISM IN PROGRESS
 ==========================================
 
 [✔] entity detected
@@ -41,6 +45,7 @@ STATUS: MACHINE CLEANSED
 </pre>
 
 </div>
+
 
 
 Ah, OpenClaw. That sneaky little AI that promised to be your best friend but turned into a clingy ex who won't leave your system. Installed it on a whim? Now it's squatting in your WSL, lurking in your Windows folders, and probably judging your browser history.
