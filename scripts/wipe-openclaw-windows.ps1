@@ -1,3 +1,7 @@
+# Determine the directory this script is running from
+$ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
+Set-Location $ScriptDir
+
 Write-Host "=== OpenClaw Windows wipe ==="
 $answer = Read-Host "Wipe OpenClaw from Windows? (y/N)"
 if ($answer -notin @("y","Y","yes","YES")) { Write-Host "Aborted."; exit }
