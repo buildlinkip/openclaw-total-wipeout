@@ -1,5 +1,9 @@
 # OpenClaw Total Wipeout: The Exorcism Kit for Your Haunted PC
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a3bc5b10-3f2d-4687-ba37-f1ad97251524" alt="Image">
+</p>
+
 Ah, OpenClaw. That sneaky little AI that promised to be your best friend but turned into a clingy ex who won't leave your system. Installed it on a whim? Now it's squatting in your WSL, lurking in your Windows folders, and probably judging your browser history. If you're here, you're already feeling like a fool for letting it in—don't worry, we've all been there. This repo is your digital garlic and holy water: it banishes OpenClaw completely, no Ouija board required.
 
 No tech wizardry needed. Just follow along, and we'll laugh about this later.
