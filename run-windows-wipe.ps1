@@ -1,35 +1,35 @@
 # run-windows-wipe.ps1
-# Launcher for the Windows wipe script from the repo root (handles nested GitHub ZIP folders safely).
+# Robust launcher for wipe-openclaw-windows.ps1 that works even when the repo
+# is nested inside another folder (GitHub ZIP double-folder issue).
 
 $ErrorActionPreference = "Stop"
 
-Write-Host "[INFO] Locating repo root relative to this script..."
+Write-Host "[INFO] Locating repo root..."
 
 # Folder where THIS script lives
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 
-# Prefer the folder this script is in as repo root
-$repoRoot = $scriptDir
-$scriptsDir = Join-Path $repoRoot "scripts"
-$wipeScript = Join-Path $scriptsDir "wipe-openclaw-windows.ps1"
+# Candidate 1: scripts folder in the same directory
+$candidate1 = Join-Path $scriptDir "scripts\wipe-openclaw-windows.ps1"
 
-# If scripts folder not found here, try parent as fallback
-if (-not (Test-Path $wipeScript)) {
-    $parent = Split-Path -Parent $scriptDir
-    $altScriptsDir = Join-Path $parent "scripts"
-    $altWipeScript = Join-Path $altScriptsDir "wipe-openclaw-windows.ps1"
+# Candidate 2: scripts folder in the parent directory
+$parentDir = Split-Path -Parent $scriptDir
+$candidate2 = Join-Path $parentDir "scripts\wipe-openclaw-windows.ps1"
 
-    if (Test-Path $altWipeScript) {
-        $repoRoot = $parent
-        $scriptsDir = $altScriptsDir
-        $wipeScript = $altWipeScript
-    }
+# Decide which one is real
+if (Test-Path $candidate1) {
+    $repoRoot = $scriptDir
+    $wipeScript = $candidate1
 }
-
-if (-not (Test-Path $wipeScript)) {
-    Write-Host "[ERROR] Could not find wipe-openclaw-windows.ps1."
-    Write-Host "  Tried:"
-    Write-Host "    $wipeScript"
+elseif (Test-Path $candidate2) {
+    $repoRoot = $parentDir
+    $wipeScript = $candidate2
+}
+else {
+    Write-Host "[ERROR] Could not locate scripts/wipe-openclaw-windows.ps1"
+    Write-Host "Checked:"
+    Write-Host "  $candidate1"
+    Write-Host "  $candidate2"
     exit 1
 }
 
