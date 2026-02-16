@@ -54,6 +54,4 @@ Start menu → type **Ubuntu** → Enter. If it asks for a password, it's probab
 ### 2.2 Run the Wipe Script (Say Goodbye to the Gremlin)
 
 ```bash
-cd /mnt/c/Users/<YOUR-NAME>/Desktop/openclaw-total-wipeout/scripts
-chmod +x wipe-openclaw-wsl.sh
-./wipe-openclaw-wsl.sh
+cd "$(find /mnt/c -maxdepth 5 -type d -name 'openclaw-total-wipeout*' 2>/dev/null | head -n 1)/scripts"
